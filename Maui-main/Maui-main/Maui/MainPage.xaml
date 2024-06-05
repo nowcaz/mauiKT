@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Tere tulemast!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="70"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Vajuta mind..."
+                FontSize="20"
+                Clicked="OnNavigateButtonClicked"
+                BackgroundColor="LightBlue"
+                TextColor="White"
+                BorderColor="White"
+                FontAttributes="Bold"
+                CornerRadius="6"
+                HeightRequest="60"
+                WidthRequest="300"
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
