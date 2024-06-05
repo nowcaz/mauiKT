@@ -6,6 +6,28 @@
              x:Class="Pages.Page1"
              Title="Products">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="DarkGreen" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="DarkGreen" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="HeightRequest" Value="40" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="TextColor" Value="DarkGreen" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{OnPlatform Default='+ Add Product', iOS='+'}"
                      Command="{Binding SetOperatingProductCommand}"/>
@@ -29,49 +51,47 @@
             <CollectionView Grid.Row="0"
                             ItemsSource="{Binding Products}">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="5"
+                    <LinearItemsLayout ItemSpacing="10"
                                        Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Product">
-                        <Grid RowDefinitions="Auto, Auto"
-                              ColumnDefinitions="*, Auto"
-                              RowSpacing="3"
-                              Padding="3"
-                              BackgroundColor="LightGreen">
-                            <Label Text="{Binding Name}"
-                                   FontAttributes="Bold" />
-                            <Label Grid.Row="1"
-                                   Text="{Binding Price, StringFormat='Price: {0:C}'}"
-                                   FontSize="13"
-                                   FontAttributes="Bold" />
-                            <Button 
-                                    Grid.Column="1"
-                                    Text="Edit"
-                                    TextColor="Pink"
-                                    HeightRequest="30"
-                                    FontSize="13"
-                                    CornerRadius="6"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=SetOperatingProductCommand}"
-                                    CommandParameter="{Binding .}"/>
+                        <Frame Padding="10"
+                               Margin="5"
+                               BorderColor="LightGreen"
+                               CornerRadius="8"
+                               BackgroundColor="White">
+                            <Grid RowDefinitions="Auto, Auto"
+                                  ColumnDefinitions="*, Auto"
+                                  RowSpacing="3">
+                                <Label Text="{Binding Name}"
+                                       Style="{StaticResource LabelStyle}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Text="{Binding Price, StringFormat='Price: {0:C}'}"
+                                       Style="{StaticResource LabelStyle}" />
+                                <Button Grid.Column="1"
+                                        Text="Edit"
+                                        Style="{StaticResource ButtonStyle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=SetOperatingProductCommand}"
+                                        CommandParameter="{Binding .}"/>
 
-                            <Button Grid.Row="1"
-                                    Grid.Column="1"
-                                    Text="Delete"
-                                    TextColor="Pink"
-                                    HeightRequest="30"
-                                    FontSize="13"
-                                    CornerRadius="6"
-                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}"
-                                    CommandParameter="{Binding Id}"/>
-                        </Grid>
+                                <Button Grid.Row="1"
+                                        Grid.Column="1"
+                                        Text="Delete"
+                                        Style="{StaticResource ButtonStyle}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ProductsViewModel}}, Path=DeleteProductCommand}"
+                                        CommandParameter="{Binding Id}"/>
+                            </Grid>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
                 <CollectionView.EmptyView>
                     <ContentView>
                         <VerticalStackLayout HorizontalOptions="Center"
                                              VerticalOptions="Center">
-                            <Label Text="Create product"/>
+                            <Label Text="Create product"
+                                   Style="{StaticResource LabelStyle}"/>
                         </VerticalStackLayout>
                     </ContentView>
                 </CollectionView.EmptyView>
@@ -80,48 +100,49 @@
             <VerticalStackLayout Grid.Row="1">
                 <BoxView Color="LightGreen"
                          HeightRequest="1" />
-                <Grid RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="*, Auto"
-                      Padding="15"
-                      RowSpacing="15"
-                      ColumnSpacing="30"
-                      BackgroundColor="White">
-                    <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="0">
-                        <Label Text="Name" 
-                               TextColor="LightGreen"/>
-                        <Entry Text="{Binding OperatingProduct.Name}"
-                               BackgroundColor="LightGreen" />
-                    </VerticalStackLayout>
-                    <VerticalStackLayout Grid.Row="0"
-                                         Grid.Column="1">
-                        <Label Text="Price"
-                               TextColor="LightGreen"/>
-                        <Entry Text="{Binding OperatingProduct.Price}"
-                               Placeholder="Product price"
-                               Margin="3"
-                               BackgroundColor="LightGreen"
-                               Keyboard="Numeric" />
-                    </VerticalStackLayout>
+                <Frame Padding="15"
+                       Margin="10"
+                       BorderColor="LightGreen"
+                       CornerRadius="8"
+                       BackgroundColor="White">
+                    <Grid RowDefinitions="Auto, Auto"
+                          ColumnDefinitions="*, Auto"
+                          RowSpacing="15"
+                          ColumnSpacing="30">
+                        <VerticalStackLayout Grid.Row="0"
+                                             Grid.Column="0">
+                            <Label Text="Name" 
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Entry Text="{Binding OperatingProduct.Name}"
+                                   Style="{StaticResource EntryStyle}" />
+                        </VerticalStackLayout>
+                        <VerticalStackLayout Grid.Row="0"
+                                             Grid.Column="1">
+                            <Label Text="Price"
+                                   Style="{StaticResource LabelStyle}"/>
+                            <Entry Text="{Binding OperatingProduct.Price}"
+                                   Placeholder="Product price"
+                                   Keyboard="Numeric"
+                                   Style="{StaticResource EntryStyle}" />
+                        </VerticalStackLayout>
 
-                    <Button Grid.Row="1"
-                            Grid.ColumnSpan="2"
-                            Text="Update Product"
-                            TextColor="LightGreen"
-                            HorizontalOptions="Center"
-                            VerticalOptions="End"
-                            CornerRadius="6"
-                            Padding="50, 0"
-                            Command="{Binding SaveProductCommand}">
-                        <Button.Triggers>
-                            <DataTrigger TargetType="Button"
-                                         Binding="{Binding OperatingProduct.Id}"
-                                         Value="0">
-                                <Setter Property="Text" Value="Create Product" />
-                            </DataTrigger>
-                        </Button.Triggers>
-                    </Button>
-                </Grid>
+                        <Button Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Text="Update Product"
+                                HorizontalOptions="Center"
+                                VerticalOptions="End"
+                                Style="{StaticResource ButtonStyle}"
+                                Command="{Binding SaveProductCommand}">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button"
+                                             Binding="{Binding OperatingProduct.Id}"
+                                             Value="0">
+                                    <Setter Property="Text" Value="Create Product" />
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
+                </Frame>
             </VerticalStackLayout>
         </Grid>
     </Grid>

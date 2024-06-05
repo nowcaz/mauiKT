@@ -2,7 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.MainPage">
 
-    <ScrollView>
+    <Grid>
+        <Image 
+            Source="pilt.jpg"
+            Aspect="AspectFill"
+            Opacity="1"/>
+        
+        <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -10,13 +16,14 @@
 
             <Label
                 Text="Tere tulemast!"
+                TextColor="White"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="70"
                 HorizontalOptions="Center" />
 
             <Button
                 Text="Vajuta mind..."
-                FontSize="20"
+                FontSize="30"
                 Clicked="OnNavigateButtonClicked"
                 BackgroundColor="LightBlue"
                 TextColor="White"
@@ -30,5 +37,5 @@
 
         </VerticalStackLayout>
     </ScrollView>
-
+        </Grid>
 </ContentPage>

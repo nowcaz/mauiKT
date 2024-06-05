@@ -29227,11 +29227,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
+      "projectUniqueName": "C:\\Users\\opilane\\source\\repos\\mauiKT\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
       "projectName": "Maui",
-      "projectPath": "C:\\Users\\opilane\\source\\repos\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
+      "projectPath": "C:\\Users\\opilane\\source\\repos\\mauiKT\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
       "packagesPath": "C:\\Users\\opilane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\opilane\\source\\repos\\Maui-main\\Maui-main\\Maui\\obj\\",
+      "outputPath": "C:\\Users\\opilane\\source\\repos\\mauiKT\\Maui-main\\Maui-main\\Maui\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [

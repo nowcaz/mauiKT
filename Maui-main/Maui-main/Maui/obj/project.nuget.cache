@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fqtH4p0EMSqbReslZhBYl7B6ZgEkQh51e9W+S8rakaRhIkIfH982ZWeHNVgp5W17eVQIhvAQ8YsooURqIsEYhA==",
+  "dgSpecHash": "VjhqY+Yhg99eL7my+2njd7/g+Lq+LzunKrXOf6fxpZJz/5D+TSRBzwGU5Wiri1WvJdi3w20dcxtEcMZluOlvxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
+  "projectFilePath": "C:\\Users\\opilane\\source\\repos\\mauiKT\\Maui-main\\Maui-main\\Maui\\Maui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\opilane\\.nuget\\packages\\communitytoolkit.mvvm\\7.1.2\\communitytoolkit.mvvm.7.1.2.nupkg.sha512",
     "C:\\Users\\opilane\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
